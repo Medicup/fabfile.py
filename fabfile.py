@@ -10,10 +10,9 @@ env.roledefs = {
   'local': ['localhost'],
   'wb': [ 'wb201.bluerage.lan', 'wb202.bluerage.lan' ],
   'ns': [ 'ns01.bluerage.lan'],
-  'db': [ 'db211.bluerage.lan', 'db212.bluerage.lan', 'db213.bluerage.lan']
-  'testwb': ['172.16.210.81', '172.16.210.82']
-  'testdb'; ['172.16.210.83', '172.16.210.84', '172.16.210.85']
-
+  'db': [ 'db211.bluerage.lan', 'db212.bluerage.lan', 'db213.bluerage.lan'],
+  'testwb': ['172.16.210.81', '172.16.210.82'],
+  'testdb': ['172.16.210.83', '172.16.210.84', '172.16.210.85']
 }
 
 def deploy():
