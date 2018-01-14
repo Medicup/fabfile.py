@@ -9,12 +9,14 @@ env.user = 'stitched'
 env.skip_bad_hosts = True
 
 env.roledefs = {
-'local': ['localhost'],
+  'local': ['localhost'],
   'wb': [ 'wb201.bluerage.lan', 'wb202.bluerage.lan' ],
   'ns': [ 'ns01.bluerage.lan'],
   'db': [ 'db211.bluerage.lan', 'db212.bluerage.lan', 'db213.bluerage.lan'],
   'testwb': ['172.16.210.81', '172.16.210.82'],
-  'testdb': ['172.16.210.83', '172.16.210.84', '172.16.210.85']
+  'testdb': ['172.16.210.83', '172.16.210.84', '172.16.210.85'],
+  'all' : ['wb201.bluerage.lan', 'wb202.bluerage.lan', 'db211.bluerage.lan', 'db212.bluerage.lan', 'db213.bluerage.lan', 'ns01.bluerage.lan', 'localhost'],
+  'testall' : ['172.16.210.81', '172.16.210.82', '172.16.210.83', '172.16.210.84', '172.16.210.85']
 }
 
 def deploy():
@@ -25,7 +27,7 @@ def deploy():
   run('git clone https://github.com/Medicup/debian_script_setup.git')
 
 def update():
-  updates = ['update', 'upgrade', 'remove', 'autoclean']
+  updates = ['update', 'upgrade', 'autoremove', 'autoclean']
 
   for update in updates:
     print('Initiating %s function... ' % (update))
