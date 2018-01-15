@@ -20,11 +20,14 @@ env.roledefs = {
 }
 
 def deploy():
-  programs = ['vim', 'dnsutils', 'ccze', 'iftop', 'htop', 'curl', 'openssh-server', 'openssh-client', 'iptables-persistent', 'python-pip', 'git']
-
-  for program in programs:
-    sudo('apt-get install -y %s' % (program))
   run('git clone https://github.com/Medicup/debian_script_setup.git')
+  run(' cd debian_script_setup')
+  sudo('chmod 755 debian_script_setup/reset_master.py')
+  run('cp debian_script_setup/reset_master.py reset_master.py')
+  run('cp debian_script_setup/master master')
+  sudo('./reset_master.py')
+  sudo('./master')
+  sudo('rm reset_master.py master')
 
 def update():
   updates = ['update', 'upgrade', 'autoremove', 'autoclean']
